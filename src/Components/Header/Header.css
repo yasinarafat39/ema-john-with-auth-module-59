@@ -1,0 +1,19 @@
+
+nav{
+    background-color: #1C2B35;
+    height: 80px;
+    padding-left: 140px;
+    padding-right: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav a{
+    text-decoration: none;
+    color: white;
+    margin-left: 40px;
+    font-size: 17px;
+}
+nav a:hover{
+    color: orange;
+}
