@@ -1,21 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { addToDb, getStoredCart } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Products from '../Products/Products';
 import './Shop.css';
 
 const Shop = () => {
-    const [products, setProducts] = useState([]);
+    const products = useLoaderData();
+    
     const [cart, setCart] = useState([]);
-    useEffect(() => {
-        console.log('product load before fetch');
-        fetch('products.json')
-            .then(res => res.json())
-            .then(data => {
-                setProducts(data);
-                // console.log('product loaded');
-            })
-    }, []);
 
     useEffect(() => {
         console.log('Local storage first line');
@@ -37,6 +31,7 @@ const Shop = () => {
         const newCart = [...cart, product];
         setCart(newCart);
         addToDb(product.id)
+        toast.success('Product Added Successfully!', {position: 'bottom-right', autoClose: 500})
     }
 
 

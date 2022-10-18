@@ -1,9 +1,13 @@
 import { faArrowRight, faClose, faDeleteLeft, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import { Link } from 'react-router-dom';
+ 
 import './Cart.css';
 
-const Cart = ({ cart }) => {
+const Cart = ({ cart, clearCart }) => {
+    console.log(cart);
+    const {id} = cart;
 
     let total = 0;
     let totalShipping = 0;
@@ -18,6 +22,7 @@ const Cart = ({ cart }) => {
     // let tax = parseFloat(taxString);
 
     let grandTotal = (total + totalShipping + tax);
+ 
 
     return (
         <div className='order-summary'>
@@ -29,8 +34,8 @@ const Cart = ({ cart }) => {
             <div className='ordered-cart'><p>Tax:</p> <span>$ {tax}</span></div>
             <div className='ordered-cart' id='grand-total'><h4>Grand Total=</h4> <span>$ {grandTotal}</span></div>
 
-            <button className='btn-clear-cart'>Clear Cart &nbsp; <FontAwesomeIcon icon={faTrashCan}></FontAwesomeIcon></button>
-            <button className='btn-review-order'>Review Order &nbsp; <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon></button>
+            <button onClick={() => clearCart()} className='btn-clear-cart'>Clear Cart &nbsp; <FontAwesomeIcon icon={faTrashCan}></FontAwesomeIcon></button>
+            <Link  to='/orders' className='btn-review-order'>Review Order &nbsp; <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon></Link>
         </div>
     );
 };

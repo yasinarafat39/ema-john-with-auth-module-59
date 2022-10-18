@@ -1,5 +1,4 @@
-
-nav{
+nav {
     background-color: #1C2B35;
     height: 80px;
     padding-left: 140px;
@@ -8,12 +7,14 @@ nav{
     align-items: center;
     justify-content: space-between;
 }
-nav a{
+
+nav a {
     text-decoration: none;
     color: white;
     margin-left: 40px;
     font-size: 17px;
 }
-nav a:hover{
-    color: orange;
+
+nav a:hover {
+    color: rgba(255, 166, 0, 0.856);
 }
