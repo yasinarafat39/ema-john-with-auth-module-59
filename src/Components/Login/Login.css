@@ -1,11 +1,32 @@
 .form-container {
-    width: 500px;
-    height: 700px;
+    width: 450px;
     margin: 100px auto;
     border: 1px solid #95A0A7;
     border-radius: 8px;
     padding-left: 43px;
     padding-right: 43px;
+}
+
+
+.login-with-google {
+    height: 55px;
+    width: 429px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+hr {
+    width: 390px;
+}
+
+.login-with-google button {
+    padding: 10px;
+    border: 1px solid #95A0A7;
+    background-color: white;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
 }
 
 .form-title {
@@ -25,7 +46,7 @@
 
 .form-control label {
     display: block;
-    font-weight: 400;
+    font-weight: 400px;
     font-size: 1.5em;
     line-height: 20px;
     letter-spacing: 0.0015em;
@@ -57,7 +78,11 @@
 
 }
 
-.btn-submit:hover{
+.btn-submit:hover {
     background: rgba(255, 153, 0, 0.6);
     transition: 0.5s;
+}
+
+.text-SignUp {
+    text-align: center;
 }
